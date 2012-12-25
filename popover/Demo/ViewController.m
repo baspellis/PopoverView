@@ -56,11 +56,11 @@
     
 //    [R20PopoverView showPopoverAtPoint:point inView:self.view withStringArray:kStringArray delegate:self]; //Show the string array defined at top of this file
     
-//    [R20PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"Was this helpful?" withStringArray:kStringArray delegate:self]; //Show string array defined at top of this file with title.
+    [R20PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"Was this helpful?" withStringArray:kStringArray delegate:self]; //Show string array defined at top of this file with title.
     
 //    [R20PopoverView showPopoverAtPoint:point inView:self.view withStringArray:kStringArray withImageArray:kImageArray delegate:self];
     
-    [R20PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"DEBUG" withStringArray:kStringArray withImageArray:kImageArray delegate:self];
+//    [R20PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"DEBUG" withStringArray:kStringArray withImageArray:kImageArray delegate:self];
     
 //    //Here's a little bit more advanced sample.  I create a custom view, and hand it off to the PopoverView to display for me.  I round the corners
 //    OCDaysView *daysView = [[OCDaysView alloc] initWithFrame:CGRectMake(0, 0, 150, 100)];
