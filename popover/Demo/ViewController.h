@@ -15,4 +15,7 @@
     
 }
 
+@property (strong, nonatomic) UILabel *tapAnywhereLabel;
+@property (strong, nonatomic) UIScrollView *scrollView;
+
 @end

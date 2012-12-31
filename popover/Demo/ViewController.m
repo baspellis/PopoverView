@@ -32,11 +32,18 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
     [self.view addGestureRecognizer:[tap autorelease]];
     
+    self.scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.bounds.size.width, self.view.bounds.size.height)] autorelease];
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 2 * self.view.bounds.size.height);
+    self.scrollView.contentOffset = CGPointMake(0.f, CGRectGetMidY(self.view.bounds));
+    
     //Create a label centered on the screen
-    UILabel *tapAnywhereLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds) - 200.f*0.5f, CGRectGetMidY(self.view.bounds) - 30.f*0.5f, 200.f, 30.f)];
-    tapAnywhereLabel.text = @"Tap Anywhere";
-    tapAnywhereLabel.textAlignment = UITextAlignmentCenter;
-    [self.view addSubview:[tapAnywhereLabel autorelease]];
+    self.tapAnywhereLabel = [[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.bounds) - 200.f*0.5f, self.view.bounds.size.height - 30.f*0.5f, 200.f, 30.f)] autorelease];
+    self.tapAnywhereLabel.text = @"Tap Anywhere";
+    self.tapAnywhereLabel.textAlignment = UITextAlignmentCenter;
+    self.tapAnywhereLabel.backgroundColor = [UIColor lightGrayColor];
+    [self.scrollView addSubview:self.tapAnywhereLabel];
+
+    [self.view addSubview:self.scrollView];
 }
 
 
@@ -46,21 +53,27 @@
 #pragma mark EXAMPLE CODE IS HERE
 
 - (void)tapped:(UITapGestureRecognizer *)tap {
-    CGPoint point = [tap locationInView:self.view];
+    CGPoint point = [tap locationInView:self.scrollView];
     
     //Here are a couple of different options for how to display the Popover
     
-//    [PopoverView showPopoverAtPoint:point inView:self.view withText:@"This is a very long popover box.  As you can see, it goes to multiple lines in size." delegate:self]; //Show text wrapping popover with long string
+//    [PopoverView showPopoverAtPoint:point inView:self.scrollView withText:@"This is a very long popover box.  As you can see, it goes to multiple lines in size." delegate:self]; //Show text wrapping popover with long string
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withText:@"This is a very long popover box.  As you can see, it goes to multiple lines in size." delegate:self]; //Show text wrapping popover with long string
     
-//    [PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"This is a title" withText:@"This is text" delegate:self]; //Show text with title
+//    [PopoverView showPopoverAtPoint:point inView:self.scrollView withTitle:@"This is a title" withText:@"This is text" delegate:self]; //Show text with title
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withTitle:@"This is a title" withText:@"This is text" delegate:self]; //Show text with title
     
-//    [PopoverView showPopoverAtPoint:point inView:self.view withStringArray:kStringArray delegate:self]; //Show the string array defined at top of this file
+//    [PopoverView showPopoverAtPoint:point inView:self.scrollView withStringArray:kStringArray delegate:self]; //Show the string array defined at top of this file
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withStringArray:kStringArray delegate:self]; //Show the string array defined at top of this file
     
-    [PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"Was this helpful?" withStringArray:kStringArray delegate:self]; //Show string array defined at top of this file with title.
+    [PopoverView showPopoverAtPoint:point inView:self.scrollView withTitle:@"Was this helpful?" withStringArray:kStringArray delegate:self]; //Show string array defined at top of this file with title.
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withTitle:@"Was this helpful?" withStringArray:kStringArray delegate:self]; //Show string array defined at top of this file with title.
     
-//    [PopoverView showPopoverAtPoint:point inView:self.view withStringArray:kStringArray withImageArray:kImageArray delegate:self];
+//    [PopoverView showPopoverAtPoint:point inView:self.scrollView withStringArray:kStringArray withImageArray:kImageArray delegate:self];
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withStringArray:kStringArray withImageArray:kImageArray delegate:self];
     
-//    [PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"DEBUG" withStringArray:kStringArray withImageArray:kImageArray delegate:self];
+//    [PopoverView showPopoverAtPoint:point inView:self.scrollView withTitle:@"DEBUG" withStringArray:kStringArray withImageArray:kImageArray delegate:self];
+//    [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withTitle:@"DEBUG" withStringArray:kStringArray withImageArray:kImageArray delegate:self];
     
 //    //Here's a little bit more advanced sample.  I create a custom view, and hand it off to the PopoverView to display for me.  I round the corners
 //    OCDaysView *daysView = [[OCDaysView alloc] initWithFrame:CGRectMake(0, 0, 150, 100)];
@@ -72,34 +85,38 @@
 //    daysView.layer.cornerRadius = 4.f;
 //    daysView.layer.masksToBounds = YES;
     
-//    pv = [PopoverView showPopoverAtPoint:point inView:self.view withContentView:[daysView autorelease] delegate:self]; //Show calendar with no title
-//    [PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"October 2012" withContentView:[daysView autorelease] delegate:self]; //Show calendar with title
+//    pv = [PopoverView showPopoverAtPoint:point inView:self.scrollView withContentView:[daysView autorelease] delegate:self]; //Show calendar with no title
+//    pv = [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withContentView:[daysView autorelease] delegate:self]; //Show calendar with no title
+
+//    pv = [PopoverView showPopoverAtPoint:point inView:self.scrollView withTitle:@"October 2012" withContentView:[daysView autorelease] delegate:self]; //Show calendar with title
+//    pv = [PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withTitle:@"October 2012" withContentView:[daysView autorelease] delegate:self]; //Show calendar with title
     
 //    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    tableView.delegate = self;
 //    tableView.dataSource = self;
-//    pv = [[PopoverView showPopoverAtPoint:point inView:self.view withContentView:tableView delegate:self] retain];
+//    pv = [[PopoverView showPopoverAtPoint:point inView:self.scrollView withContentView:tableView delegate:self] retain];
+//    pv = [[PopoverView showPopoverFromRect:self.tapAnywhereLabel.frame inView:self.scrollView withContentView:tableView delegate:self] retain];
 }
 
 
 
 #pragma mark - DEMO - UITableView Delegate Methods
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return 10;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 25;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-//    cell.textLabel.text = @"text";
-//    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.f];
-//    
-//    return [cell autorelease];
-//}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 25;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    cell.textLabel.text = @"text";
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.f];
+    
+    return [cell autorelease];
+}
 
 
 

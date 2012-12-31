@@ -26,10 +26,21 @@
     return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withText:text delegate:delegate];
 }
 
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverFromRect:rect inView:view withTitle:nil withText:text delegate:delegate];
+}
+
+
 + (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate
 {
+    return [PopoverView showPopoverFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:title withText:text delegate:delegate];
+}
+
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withText:text];
+    [popoverView showFromRect:rect inView:view withTitle:title withText:text];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -40,10 +51,20 @@
     return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withViewArray:viewArray delegate:delegate];
 }
 
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverFromRect:rect inView:view withTitle:nil withViewArray:viewArray delegate:delegate];
+}
+
 + (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate
 {
+    return [PopoverView showPopoverFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:title withViewArray:viewArray delegate:delegate];
+}
+
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withViewArray:viewArray];
+    [popoverView showFromRect:rect inView:view withTitle:title withViewArray:viewArray];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -54,10 +75,20 @@
     return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withStringArray:stringArray delegate:delegate];
 }
 
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverFromRect:rect inView:view withTitle:nil withStringArray:stringArray delegate:delegate];
+}
+
 + (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate
 {
+    return [PopoverView showPopoverFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:title withStringArray:stringArray delegate:delegate];
+}
+
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withStringArray:stringArray];
+    [popoverView showFromRect:rect inView:view withTitle:title withStringArray:stringArray];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -68,10 +99,20 @@
     return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray delegate:delegate];
 }
 
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverFromRect:rect inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray delegate:delegate];
+}
+
 + (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate
 {
+    return [PopoverView showPopoverFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:title withStringArray:stringArray withImageArray:imageArray delegate:delegate];
+}
+
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withStringArray:stringArray withImageArray:imageArray];
+    [popoverView showFromRect:rect inView:view withTitle:title withStringArray:stringArray withImageArray:imageArray];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -82,10 +123,20 @@
     return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withContentView:cView delegate:delegate];
 }
 
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverFromRect:rect inView:view withTitle:nil withContentView:cView delegate:delegate];
+}
+
 + (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate
 {
+    return [PopoverView showPopoverFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:title withContentView:cView delegate:delegate];
+}
+
++ (PopoverView *)showPopoverFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withContentView:cView];
+    [popoverView showFromRect:rect inView:view withTitle:title withContentView:cView];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -133,7 +184,17 @@
     [self showAtPoint:point inView:view withTitle:nil withText:text];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withText:(NSString *)text
+{
+    [self showFromRect:rect inView:view withTitle:nil withText:text];
+}
+
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text
+{
+    [self showFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:nil withText:text];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text
 {
     UIFont *font = kTextFont;
     CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width - kHorizontalMargin*4.f, 1000.f) lineBreakMode:UILineBreakModeWordWrap];
@@ -147,7 +208,7 @@
     textView.textColor = [UIColor colorWithRed:0.329 green:0.341 blue:0.353 alpha:1];
     textView.text = text;
     
-    [self showAtPoint:point inView:view withTitle:title withViewArray:[NSArray arrayWithObject:[textView autorelease]]];
+    [self showFromRect:rect inView:view withTitle:title withViewArray:[NSArray arrayWithObject:[textView autorelease]]];
 }
 
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withViewArray:(NSArray *)viewArray
@@ -155,7 +216,17 @@
     [self showAtPoint:point inView:view withTitle:nil withViewArray:viewArray];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withViewArray:(NSArray *)viewArray
+{
+    [self showFromRect:rect inView:view withTitle:nil withViewArray:viewArray];
+}
+
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray
+{
+    [self showFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:nil withViewArray:viewArray];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray
 {
     UIView *container = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -267,7 +338,7 @@
     
     self.subviewsArray = viewArray;
     
-    [self showAtPoint:point inView:view withContentView:[container autorelease]];
+    [self showFromRect:rect inView:view withContentView:[container autorelease]];
 }
 
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray
@@ -275,7 +346,17 @@
     [self showAtPoint:point inView:view withTitle:nil withStringArray:stringArray];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withStringArray:(NSArray *)stringArray
+{
+    [self showFromRect:rect inView:view withTitle:nil withStringArray:stringArray];
+}
+
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray
+{
+    [self showFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:nil withStringArray:stringArray];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray
 {
     NSMutableArray *labelArray = [[NSMutableArray alloc] initWithCapacity:stringArray.count];
     
@@ -297,7 +378,7 @@
         [labelArray addObject:[textButton autorelease]];
     }
     
-    [self showAtPoint:point inView:view withTitle:title withViewArray:[labelArray autorelease]];
+    [self showFromRect:rect inView:view withTitle:title withViewArray:[labelArray autorelease]];
 }
 
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
@@ -305,7 +386,17 @@
     [self showAtPoint:point inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
+{
+    [self showFromRect:rect inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray];
+}
+
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
+{
+    [self showFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
 {
     //This method is identical to the one above except for the last line where it calls
     //the appropriate show...withTitle:withViewArray: selector
@@ -356,7 +447,7 @@
         [containerView release];
     }
     
-    [self showAtPoint:point inView:view withTitle:title withViewArray:[tempViewArray autorelease]];
+    [self showFromRect:rect inView:view withTitle:title withViewArray:[tempViewArray autorelease]];
 }
 
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView
@@ -364,9 +455,18 @@
     [self showAtPoint:point inView:view withTitle:title withViewArray:[NSArray arrayWithObject:cView]];
 }
 
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView
+{
+    [self showFromRect:rect inView:view withTitle:title withViewArray:[NSArray arrayWithObject:cView]];
+}
+
 - (void)showAtPoint:(CGPoint)point inView:(UIView *)view withContentView:(UIView *)cView
 {
-    
+    [self showFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view withContentView:cView];
+}
+
+- (void)showFromRect:(CGRect)rect inView:(UIView *)view withContentView:(UIView *)cView
+{
     //NSLog(@"point:%f,%f", point.x, point.y);
     
     self.contentView = cView;
@@ -380,7 +480,7 @@
     }
     topView = [[window subviews] objectAtIndex:0];
     
-    [self layoutAtPoint:point inView:view];
+    [self layoutFromRect:rect inView:view];
     [self addSubview:contentView];
     [topView addSubview:self];
     
@@ -410,10 +510,16 @@
 
 - (void)layoutAtPoint:(CGPoint)point inView:(UIView *)view
 {
+    [self layoutFromRect:CGRectMake(point.x, point.y, 0.f, 0.f) inView:view];
+}
+
+- (void)layoutFromRect:(CGRect)rect inView:(UIView *)view
+{
+    CGRect topRect = [topView convertRect:rect fromView:view];
     
-    CGPoint topPoint = [topView convertPoint:point fromView:view];
+//    CGPoint topPoint = [topView convertPoint:point fromView:view];
     
-    arrowPoint = topPoint;
+    arrowPoint = CGPointMake(CGRectGetMidX(topRect), CGRectGetMinY(topRect));
     
     //NSLog(@"arrowPoint:%f,%f", arrowPoint.x, arrowPoint.y);
     
@@ -456,13 +562,16 @@
     
     above = YES;
     
-    if(topPoint.y - contentHeight - arrowHeight - topPadding < CGRectGetMinY(topViewBounds)) {
+    if(topRect.origin.y - contentHeight - arrowHeight - topPadding < CGRectGetMinY(topViewBounds)) {
         //Position below because it won't fit above.
         above = NO;
+        
+        arrowPoint.y += topRect.size.height;
         
         boxFrame = CGRectMake(xOrigin, arrowPoint.y + arrowHeight, boxWidth, boxHeight);
     } else {
         //Position above.
+        
         above = YES;
         
         boxFrame = CGRectMake(xOrigin, arrowPoint.y - arrowHeight - boxHeight, boxWidth, boxHeight);
