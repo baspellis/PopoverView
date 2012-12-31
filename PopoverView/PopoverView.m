@@ -21,15 +21,13 @@
 
 #pragma mark - Static Methods
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate {
-    PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withText:text];
-    popoverView.delegate = delegate;
-    [popoverView release];
-    return popoverView;
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withText:text delegate:delegate];
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate {
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
     [popoverView showAtPoint:point inView:view withTitle:title withText:text];
     popoverView.delegate = delegate;
@@ -37,15 +35,13 @@
     return popoverView;
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate {
-    PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withViewArray:viewArray];
-    popoverView.delegate = delegate;
-    [popoverView release];
-    return popoverView;
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withViewArray:viewArray delegate:delegate];
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate {
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
     [popoverView showAtPoint:point inView:view withTitle:title withViewArray:viewArray];
     popoverView.delegate = delegate;
@@ -53,15 +49,13 @@
     return popoverView;
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate {
-    PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withStringArray:stringArray];
-    popoverView.delegate = delegate;
-    [popoverView release];
-    return popoverView;
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withStringArray:stringArray delegate:delegate];
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate {
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
     [popoverView showAtPoint:point inView:view withTitle:title withStringArray:stringArray];
     popoverView.delegate = delegate;
@@ -69,15 +63,13 @@
     return popoverView;
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate {
-    PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withStringArray:stringArray withImageArray:imageArray];
-    popoverView.delegate = delegate;
-    [popoverView release];
-    return popoverView;
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray delegate:delegate];
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate {
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
     [popoverView showAtPoint:point inView:view withTitle:title withStringArray:stringArray withImageArray:imageArray];
     popoverView.delegate = delegate;
@@ -85,17 +77,15 @@
     return popoverView;
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate {
-    PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withTitle:title withContentView:cView];
-    popoverView.delegate = delegate;
-    [popoverView release];
-    return popoverView;
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate
+{
+    return [PopoverView showPopoverAtPoint:point inView:view withTitle:nil withContentView:cView delegate:delegate];
 }
 
-+ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate {
++ (PopoverView *)showPopoverAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView delegate:(id<PopoverViewDelegate>)delegate
+{
     PopoverView *popoverView = [[PopoverView alloc] initWithFrame:CGRectZero];
-    [popoverView showAtPoint:point inView:view withContentView:cView];
+    [popoverView showAtPoint:point inView:view withTitle:title withContentView:cView];
     popoverView.delegate = delegate;
     [popoverView release];
     return popoverView;
@@ -119,7 +109,8 @@
     return self;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     self.subviewsArray = nil;
     
     if(dividerRects) {
@@ -137,24 +128,13 @@
 
 #pragma mark - Display methods
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withText:(NSString *)text {
-    UIFont *font = kTextFont;
-    
-    CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width - kHorizontalMargin*4.f, 1000.f) lineBreakMode:UILineBreakModeWordWrap];
-    
-    UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
-    textView.backgroundColor = [UIColor clearColor];
-    textView.userInteractionEnabled = NO;
-    [textView setNumberOfLines:0]; //This is so the label word wraps instead of cutting off the text
-    textView.font = font;
-    textView.textAlignment = kTextAlignment;
-    textView.textColor = [UIColor colorWithRed:0.329 green:0.341 blue:0.353 alpha:1];
-    textView.text = text;
-    
-    [self showAtPoint:point inView:view withViewArray:[NSArray arrayWithObject:[textView autorelease]]];
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withText:(NSString *)text
+{
+    [self showAtPoint:point inView:view withTitle:nil withText:text];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withText:(NSString *)text
+{
     UIFont *font = kTextFont;
     CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width - kHorizontalMargin*4.f, 1000.f) lineBreakMode:UILineBreakModeWordWrap];
     
@@ -170,103 +150,31 @@
     [self showAtPoint:point inView:view withTitle:title withViewArray:[NSArray arrayWithObject:[textView autorelease]]];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withViewArray:(NSArray *)viewArray {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withViewArray:(NSArray *)viewArray
+{
+    [self showAtPoint:point inView:view withTitle:nil withViewArray:viewArray];
+}
+
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray
+{
     UIView *container = [[UIView alloc] initWithFrame:CGRectZero];
     
     float totalHeight = 0.f;
     float totalWidth = 0.f;
-    
-    int i = 0;
-    
-    //Position each view the first time, and identify which view has the largest width that controls
-    //the sizing of the popover.
-    for(UIView *view in viewArray) {
-        
-        view.frame = CGRectMake(0, totalHeight, view.frame.size.width, view.frame.size.height);
-        
-        //Only add padding below the view if it's not the last item
-        float padding = (i == viewArray.count-1) ? 0 : kBoxPadding;
-        
-        totalHeight += view.frame.size.height + padding;
-        
-        if(view.frame.size.width > totalWidth) {
-            totalWidth = view.frame.size.width;
-        }
-        
-        [container addSubview:view];
-        
-        i++;
-    }
-    
-    //If dividers are enabled, then we allocate the divider rect array.  This will hold NSValues
-    if(kShowDividersBetweenViews) {
-        dividerRects = [[NSMutableArray alloc] initWithCapacity:viewArray.count-1];
-    }
-    
-    container.frame = CGRectMake(0, 0, totalWidth, totalHeight);
-    
-    i = 0;
-    
-    totalHeight = 0;
-    
-    //Now we actually change the frame element for each subview, and center the views horizontally.
-    for(UIView *view in viewArray) {
-        if([view autoresizingMask] == UIViewAutoresizingFlexibleWidth) {
-            //Now make sure all flexible views are the full width
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, totalWidth, view.frame.size.height);
-        } else {
-            //If the view is not flexible width, then we position it in the view according to the text alignment setting, without stretching it.
-            if(kTextAlignment == UITextAlignmentLeft) {
-                view.frame = CGRectMake(CGRectGetMinX(boxFrame), view.frame.origin.y, view.frame.size.width, view.frame.size.height);
-            }
-            else if(kTextAlignment == UITextAlignmentRight) {
-                view.frame = CGRectMake(floorf(CGRectGetMinX(boxFrame) + totalWidth - view.frame.size.width), view.frame.origin.y, view.frame.size.width, view.frame.size.height);
-            }
-            else {
-                view.frame = CGRectMake(floorf(CGRectGetMinX(boxFrame) + totalWidth*0.5f - view.frame.size.width*0.5f), view.frame.origin.y, view.frame.size.width, view.frame.size.height);
-            }
-        }
-        
-        //and if dividers are enabled, we record their position for the drawing methods
-        if(kShowDividersBetweenViews && i != viewArray.count-1) {
-            CGRect dividerRect = CGRectMake(view.frame.origin.x, floorf(view.frame.origin.y + view.frame.size.height + kBoxPadding*0.5f), view.frame.size.width, 0.5f);
-            
-            [((NSMutableArray *)dividerRects) addObject:[NSValue valueWithCGRect:dividerRect]];
-        }
-        
-        //Only add padding below the view if it's not the last item
-        float padding = (i == viewArray.count-1) ? 0.f : kBoxPadding;
-        
-        totalHeight += view.frame.size.height + padding;
-        
-        i++;
-    }
-    
-    self.subviewsArray = viewArray;
-    
-    [self showAtPoint:point inView:view withContentView:[container autorelease]];
-}
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withViewArray:(NSArray *)viewArray {
-    UIView *container = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    //Create a label for the title text.
-    CGSize titleSize = [title sizeWithFont:kTitleFont];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, titleSize.width, titleSize.height)];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font = kTitleFont;
-    titleLabel.textAlignment = UITextAlignmentCenter;
-    titleLabel.textColor = kTitleColor;
-    titleLabel.text = title;
-    
-    //Make sure that the title's label will have non-zero height.  If it has zero height, then we don't allocate any space
-    //for it in the positioning of the views.
-    float titleHeightOffset = (titleSize.height > 0.f ? kBoxPadding : 0.f);
-    
-    float totalHeight = titleSize.height + titleHeightOffset + kBoxPadding;
-    float totalWidth = titleSize.width;
-    
     int i = 0;
+    
+    CGSize titleSize = CGSizeZero;
+    if(title) {
+        titleSize = [title sizeWithFont:kTitleFont];
+        
+        //Make sure that the title's label will have non-zero height.  If it has zero height, then we don't allocate any space
+        //for it in the positioning of the views.
+        float titleHeightOffset = (titleSize.height > 0.f ? kBoxPadding : 0.f);
+        
+        totalHeight = titleSize.height + titleHeightOffset + kBoxPadding;
+        totalWidth = titleSize.width;
+    }
     
     //Position each view the first time, and identify which view has the largest width that controls
     //the sizing of the popover.
@@ -293,6 +201,8 @@
         dividerRects = [[NSMutableArray alloc] initWithCapacity:viewArray.count-1];
     }
     
+    container.frame = CGRectMake(0, 0, totalWidth, totalHeight);
+
     i = 0;
     
     for(UIView *view in viewArray) {
@@ -319,58 +229,54 @@
             [((NSMutableArray *)dividerRects) addObject:[NSValue valueWithCGRect:dividerRect]];
         }
         
+        //Only add padding below the view if it's not the last item
+        float padding = (i == viewArray.count-1) ? 0.f : kBoxPadding;
+        
+        totalHeight += view.frame.size.height + padding;
+
         i++;
     }
     
-    if(kTextAlignment == UITextAlignmentLeft) {
-        titleLabel.frame = CGRectMake(0.f, 0.f, titleSize.width, titleSize.height);
+    if(title) {
+        //Create a label for the title text.
+        CGSize titleSize = [title sizeWithFont:kTitleFont];
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.font = kTitleFont;
+        titleLabel.textAlignment = UITextAlignmentCenter;
+        titleLabel.textColor = kTitleColor;
+        titleLabel.text = title;
+
+        if(kTextAlignment == UITextAlignmentLeft) {
+            titleLabel.frame = CGRectMake(0.f, 0.f, titleSize.width, titleSize.height);
+        }
+        else if(kTextAlignment == UITextAlignmentRight) {
+            titleLabel.frame = CGRectMake(totalWidth - titleSize.width, 0.f, titleSize.width, titleSize.height);
+        }
+        else {
+            titleLabel.frame = CGRectMake(floorf(totalWidth*0.5f - titleSize.width*0.5f), 0.f, titleSize.width, titleSize.height);
+        }
+        
+        //Store the titleView as an instance variable if it is larger than 0 height (not an empty string)
+        if(titleSize.height > 0) {
+            self.titleView = titleLabel;
+        }
+        
+        [container addSubview:[titleLabel autorelease]];
     }
-    else if(kTextAlignment == UITextAlignmentRight) {
-        titleLabel.frame = CGRectMake(totalWidth - titleSize.width, 0.f, titleSize.width, titleSize.height);
-    }
-    else {
-        titleLabel.frame = CGRectMake(floorf(totalWidth*0.5f - titleSize.width*0.5f), 0.f, titleSize.width, titleSize.height);
-    }
-    
-    //Store the titleView as an instance variable if it is larger than 0 height (not an empty string)
-    if(titleSize.height > 0) {
-        self.titleView = titleLabel;
-    }
-    
-    [container addSubview:[titleLabel autorelease]];
-    
-    container.frame = CGRectMake(0, 0, totalWidth, totalHeight);
     
     self.subviewsArray = viewArray;
     
     [self showAtPoint:point inView:view withContentView:[container autorelease]];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray {
-    NSMutableArray *labelArray = [[NSMutableArray alloc] initWithCapacity:stringArray.count];
-    
-    UIFont *font = kTextFont;
-    
-    for(NSString *string in stringArray) {
-        CGSize textSize = [string sizeWithFont:font];
-        UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
-        textButton.backgroundColor = [UIColor clearColor];
-        textButton.titleLabel.font = font;
-        textButton.titleLabel.textAlignment = kTextAlignment;
-        textButton.titleLabel.textColor = kTextColor;
-        [textButton setTitle:string forState:UIControlStateNormal];
-        textButton.layer.cornerRadius = 4.f;
-        [textButton setTitleColor:kTextColor forState:UIControlStateNormal];
-        [textButton setTitleColor:[UIColor colorWithRed:0.098 green:0.102 blue:0.106 alpha:1.000] forState:UIControlStateHighlighted];
-        [textButton addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [labelArray addObject:[textButton autorelease]];
-    }
-    
-    [self showAtPoint:point inView:view withViewArray:[labelArray autorelease]];
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray
+{
+    [self showAtPoint:point inView:view withTitle:nil withStringArray:stringArray];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray
+{
     NSMutableArray *labelArray = [[NSMutableArray alloc] initWithCapacity:stringArray.count];
     
     UIFont *font = kTextFont;
@@ -394,60 +300,13 @@
     [self showAtPoint:point inView:view withTitle:title withViewArray:[labelArray autorelease]];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray {
-    //Here we do something pretty similar to the stringArray method above.
-    //We create an array of subviews that contain the image centered above a label.
-    
-    NSAssert((stringArray.count == imageArray.count), @"stringArray.count should equal imageArray.count");
-    
-    NSMutableArray *tempViewArray = [[NSMutableArray alloc] initWithCapacity:stringArray.count];
-    
-    UIFont *font = kTextFont;
-    
-    for(int i = 0; i < stringArray.count; i++) {
-        NSString *string = [stringArray objectAtIndex:i];
-        
-        
-        //First we build a label for the text to set in.
-        CGSize textSize = [string sizeWithFont:font];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
-        label.backgroundColor = [UIColor clearColor];
-        label.font = font;
-        label.textAlignment = kTextAlignment;
-        label.textColor = kTextColor;
-        label.text = string;
-        label.layer.cornerRadius = 4.f;
-        
-        //Now we grab the image at the same index in the imageArray, and create
-        //a UIImageView for it.
-        UIImage *image = [imageArray objectAtIndex:i];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        
-        //Take the larger of the two widths as the width for the container
-        float containerWidth = MAX(imageView.frame.size.width, label.frame.size.width);
-        float containerHeight = label.frame.size.height + kImageTopPadding + kImageBottomPadding + imageView.frame.size.height;
-        
-        //This container will hold both the image and the label
-        UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, containerWidth, containerHeight)];
-        
-        //Now we do the frame manipulations to put the imageView on top of the label, both centered
-        imageView.frame = CGRectMake(floorf(containerWidth*0.5f - imageView.frame.size.width*0.5f), kImageTopPadding, imageView.frame.size.width, imageView.frame.size.height);
-        label.frame = CGRectMake(floorf(containerWidth*0.5f - label.frame.size.width*0.5f), imageView.frame.size.height + kImageBottomPadding + kImageTopPadding, label.frame.size.width, label.frame.size.height);
-        
-        [containerView addSubview:imageView];
-        [containerView addSubview:label];
-        
-        [label release];
-        [imageView release];
-        
-        [tempViewArray addObject:containerView];
-        [containerView release];
-    }
-    
-    [self showAtPoint:point inView:view withViewArray:[tempViewArray autorelease]];
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
+{
+    [self showAtPoint:point inView:view withTitle:nil withStringArray:stringArray withImageArray:imageArray];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withStringArray:(NSArray *)stringArray withImageArray:(NSArray *)imageArray
+{
     //This method is identical to the one above except for the last line where it calls
     //the appropriate show...withTitle:withViewArray: selector
     
@@ -500,11 +359,13 @@
     [self showAtPoint:point inView:view withTitle:title withViewArray:[tempViewArray autorelease]];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withTitle:(NSString *)title withContentView:(UIView *)cView
+{
     [self showAtPoint:point inView:view withTitle:title withViewArray:[NSArray arrayWithObject:cView]];
 }
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withContentView:(UIView *)cView {
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view withContentView:(UIView *)cView
+{
     
     //NSLog(@"point:%f,%f", point.x, point.y);
     
@@ -519,76 +380,8 @@
     }
     topView = [[window subviews] objectAtIndex:0];
     
-    CGPoint topPoint = [topView convertPoint:point fromView:view];
-    
-    arrowPoint = topPoint;
-    
-    //NSLog(@"arrowPoint:%f,%f", arrowPoint.x, arrowPoint.y);
-    
-    CGRect topViewBounds = topView.bounds;
-    
-    float contentHeight = contentView.frame.size.height;
-    float contentWidth = contentView.frame.size.width;
-    
-    float padding = kBoxPadding;
-    
-    float boxHeight = contentHeight + 2.f*padding;
-    float boxWidth = contentWidth + 2.f*padding;
-    
-    float xOrigin = 0.f;
-    
-    //Make sure the arrow point is within the drawable bounds for the popover.
-    if(arrowPoint.x + kArrowHeight > topViewBounds.size.width - kHorizontalMargin - kBoxRadius - kArrowHorizontalPadding) {//Too far to the right
-        arrowPoint.x = topViewBounds.size.width - kHorizontalMargin - kBoxRadius - kArrowHorizontalPadding - kArrowHeight;
-        //NSLog(@"Correcting Arrow Point because it's too far to the right");
-    } else if(arrowPoint.x - kArrowHeight < kHorizontalMargin + kBoxRadius + kArrowHorizontalPadding) {//Too far to the left
-        arrowPoint.x = kHorizontalMargin + kArrowHeight + kBoxRadius + kArrowHorizontalPadding;
-        //NSLog(@"Correcting Arrow Point because it's too far to the left");
-    }
-    
-    //NSLog(@"arrowPoint:%f,%f", arrowPoint.x, arrowPoint.y);
-    
-    xOrigin = floorf(arrowPoint.x - boxWidth*0.5f);
-    
-    //Check to see if the centered xOrigin value puts the box outside of the normal range.
-    if(xOrigin < CGRectGetMinX(topViewBounds) + kHorizontalMargin) {
-        xOrigin = CGRectGetMinX(topViewBounds) + kHorizontalMargin;
-    } else if(xOrigin + boxWidth > CGRectGetMaxX(topViewBounds) - kHorizontalMargin) {
-        //Check to see if the positioning puts the box out of the window towards the left
-        xOrigin = CGRectGetMaxX(topViewBounds) - kHorizontalMargin - boxWidth;
-    }
-    
-    float arrowHeight = kArrowHeight;
-    
-    float topPadding = kTopMargin;
-    
-    above = YES;
-    
-    if(topPoint.y - contentHeight - arrowHeight - topPadding < CGRectGetMinY(topViewBounds)) {
-        //Position below because it won't fit above.
-        above = NO;
-        
-        boxFrame = CGRectMake(xOrigin, arrowPoint.y + arrowHeight, boxWidth, boxHeight);
-    } else {
-        //Position above.
-        above = YES;
-        
-        boxFrame = CGRectMake(xOrigin, arrowPoint.y - arrowHeight - boxHeight, boxWidth, boxHeight);
-    }
-    
-    //NSLog(@"boxFrame:(%f,%f,%f,%f)", boxFrame.origin.x, boxFrame.origin.y, boxFrame.size.width, boxFrame.size.height);
-    
-    CGRect contentFrame = CGRectMake(boxFrame.origin.x + padding, boxFrame.origin.y + padding, contentWidth, contentHeight);
-    contentView.frame = contentFrame;
+    [self layoutAtPoint:point inView:view];
     [self addSubview:contentView];
-    
-    //We set the anchorPoint here so the popover will "grow" out of the arrowPoint specified by the user.
-    //You have to set the anchorPoint before setting the frame, because the anchorPoint property will
-    //implicitly set the frame for the view, which we do not want.
-    self.layer.anchorPoint = CGPointMake(arrowPoint.x / topViewBounds.size.width, arrowPoint.y / topViewBounds.size.height);
-    self.frame = topViewBounds;
-    [self setNeedsDisplay];
-    
     [topView addSubview:self];
     
     //Add a tap gesture recognizer to the large invisible view (self), which will detect taps anywhere on the screen.
@@ -597,7 +390,6 @@
     [self addGestureRecognizer:tap];
     [tap release];
     
-    self.userInteractionEnabled = YES;
     
     //Make the view small and transparent before animation
     self.alpha = 0.f;
@@ -616,9 +408,8 @@
     }];
 }
 
-- (void)layoutAtPoint:(CGPoint)point inView:(UIView *)view{
-    
-    self.alpha = 0.f;
+- (void)layoutAtPoint:(CGPoint)point inView:(UIView *)view
+{
     
     CGPoint topPoint = [topView convertPoint:point fromView:view];
     
@@ -690,21 +481,13 @@
     [self setNeedsDisplay];
     
     self.userInteractionEnabled = YES;
-    
-    //animate into full size
-    //First stage animates to 1.05x normal size, then second stage animates back down to 1x size.
-    //This two-stage animation creates a little "pop" on open.
-    [UIView animateWithDuration:0.2f delay:0.f options:UIViewAnimationCurveEaseInOut animations:^{
-        self.alpha = 1.f;
-    } completion:nil];
 }
-
-
 
 #pragma mark - Activity Indicator
 
 //Animates in a progress indicator, and removes
-- (void)showActivityIndicatorWithMessage:(NSString *)msg {
+- (void)showActivityIndicatorWithMessage:(NSString *)msg
+{
     if([titleView isKindOfClass:[UILabel class]]) {
         ((UILabel *)titleView).text = msg;
     }
@@ -735,7 +518,8 @@
     [activityIndicator startAnimating];
 }
 
-- (void)hideActivityIndicatorWithMessage:(NSString *)msg {
+- (void)hideActivityIndicatorWithMessage:(NSString *)msg
+{
     if([titleView isKindOfClass:[UILabel class]]) {
         ((UILabel *)titleView).text = msg;
     }
@@ -750,7 +534,8 @@
     }];
 }
 
-- (void)showImage:(UIImage *)image withMessage:(NSString *)msg {
+- (void)showImage:(UIImage *)image withMessage:(NSString *)msg
+{
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.alpha = 0.f;
     imageView.frame = CGRectMake(floorf(CGRectGetMidX(contentView.bounds) - image.size.width*0.5f), floorf(CGRectGetMidY(contentView.bounds) - image.size.height*0.5f + ((self.titleView) ? 20 : 0.f)), image.size.width, image.size.height);
@@ -785,7 +570,8 @@
     }];
 }
 
-- (void)showError {
+- (void)showError
+{
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"error"]];
     imageView.alpha = 0.f;
     imageView.frame = CGRectMake(CGRectGetMidX(contentView.bounds) - 20.f, CGRectGetMidY(contentView.bounds) - 20.f + ((self.titleView) ? 20 : 0.f), 40.f, 40.f);
@@ -815,7 +601,8 @@
     
 }
 
-- (void)showSuccess {
+- (void)showSuccess
+{
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"success"]];
     imageView.alpha = 0.f;
     imageView.frame = CGRectMake(CGRectGetMidX(contentView.bounds) - 20.f, CGRectGetMidY(contentView.bounds) - 20.f + ((self.titleView) ? 20 : 0.f), 40.f, 40.f);
@@ -849,7 +636,8 @@
 
 #pragma mark - User Interaction
 
-- (void)tapped:(UITapGestureRecognizer *)tap {
+- (void)tapped:(UITapGestureRecognizer *)tap
+{
     
     CGPoint point = [tap locationInView:contentView];
     
@@ -894,7 +682,8 @@
     
 }
 
-- (void)didTapButton:(UIButton *)sender {
+- (void)didTapButton:(UIButton *)sender
+{
     int index = [subviewsArray indexOfObject:sender];
     
     if(index == NSNotFound) {
@@ -906,7 +695,8 @@
     }
 }
 
-- (void)dismiss {
+- (void)dismiss
+{
     [UIView animateWithDuration:0.3f animations:^{
         self.alpha = 0.1f;
         self.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
@@ -919,7 +709,8 @@
     }];
 }
 
-- (void)animateRotationToNewPoint:(CGPoint)point inView:(UIView *)view withDuration:(NSTimeInterval)duration {
+- (void)animateRotationToNewPoint:(CGPoint)point inView:(UIView *)view withDuration:(NSTimeInterval)duration
+{
     [self layoutAtPoint:point inView:view];
     
 }
